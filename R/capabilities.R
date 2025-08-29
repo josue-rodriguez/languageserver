@@ -38,6 +38,52 @@ DocumentLinkOptions <- list(
     resolveProvider = TRUE
 )
 
+SemanticTokensLegend <- list(
+    tokenTypes = c(
+        "namespace",
+        "type",
+        "class", 
+        "enum",
+        "interface",
+        "struct",
+        "typeParameter",
+        "parameter",
+        "variable",
+        "property",
+        "enumMember",
+        "event",
+        "function",
+        "method",
+        "macro",
+        "keyword",
+        "modifier",
+        "comment",
+        "string",
+        "number",
+        "regexp",
+        "operator",
+        "decorator"
+    ),
+    tokenModifiers = c(
+        "declaration",
+        "definition", 
+        "readonly",
+        "static",
+        "deprecated",
+        "abstract",
+        "async",
+        "modification",
+        "documentation",
+        "defaultLibrary"
+    )
+)
+
+SemanticTokensOptions <- list(
+    legend = SemanticTokensLegend,
+    full = TRUE,
+    range = TRUE
+)
+
 RenameOptions <- list(
     prepareProvider = TRUE
 )
@@ -68,9 +114,9 @@ ServerCapabilities <- list(
     colorProvider = TRUE,
     foldingRangeProvider = TRUE,
     selectionRangeProvider = TRUE,
-    callHierarchyProvider = TRUE
+    callHierarchyProvider = TRUE,
     # linkedEditingRangeProvider = FALSE,
-    # semanticTokensProvider = FALSE,
+    semanticTokensProvider = SemanticTokensOptions
     # monikerProvider = FALSE,
     # executeCommandProvider = ExecuteCommandOptions,
     # workspace = list()
